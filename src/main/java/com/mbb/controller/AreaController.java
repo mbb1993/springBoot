@@ -15,8 +15,7 @@ import java.util.Map;
 /**
  * Created by Owner on 2018/3/7.
  */
-@Controller
-@ResponseBody
+@RestController
 @RequestMapping(value="/superAdmin")
 public class AreaController {
     @Autowired
