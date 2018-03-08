@@ -5,7 +5,6 @@ import com.mbb.common.ResultCode;
 import com.mbb.entity.Area;
 import com.mbb.service.AreaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
