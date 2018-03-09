@@ -1,5 +1,7 @@
 package com.mbb.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.mbb.common.JsonResult;
 import com.mbb.common.ResultCode;
 import com.mbb.entity.Area;
@@ -22,10 +24,10 @@ public class AreaController {
 
     @GetMapping(value="/listArea")
     public JsonResult listArea(){
-        Map<String,Object> modelMap = new HashMap<String,Object>();
+        PageHelper.startPage(1,2);
         List<Area> areaList = areaService.getAreaList();
-        modelMap.put("areaList",areaList);
-        return new JsonResult(ResultCode.SUCCESS,"成功",modelMap);
+        PageInfo pageInfo = new PageInfo(areaList);
+        return new JsonResult(ResultCode.SUCCESS,"成功",pageInfo);
     }
 
     @GetMapping(value="/getAreaById")

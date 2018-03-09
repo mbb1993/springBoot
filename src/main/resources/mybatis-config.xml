@@ -12,4 +12,18 @@
         <!--开启驼峰式命名转换：数据库Table{create_time} 对应实体类Entity{createTime}-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+    <plugins>
+        <!--mybatis分页插件-->
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <!-- 设置数据库类型Oracle,Mysql,MariaDB,SQLite,Hsqldb,PostgreSQL六种数据库 -->
+            <property name="dialect" value="mysql"/>
+            <!--<property name="offsetAsPageNum" value="false"/>-->
+            <!--<property name="rowBoundsWithCount" value="false"/>-->
+            <!--<property name="pageSizeZero" value="true"/>-->
+            <!--<property name="reasonable" value="false"/>-->
+            <!--<property name="supportMethodsArguments" value="false"/>-->
+            <!--<property name="returnPageInfo" value="none"/>-->
+        </plugin>
+    </plugins>
 </configuration>
