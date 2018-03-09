@@ -6,6 +6,8 @@ import com.mbb.common.JsonResult;
 import com.mbb.common.ResultCode;
 import com.mbb.entity.Area;
 import com.mbb.service.AreaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,11 +21,13 @@ import java.util.Map;
 @RestController
 @RequestMapping(value="/superAdmin")
 public class AreaController {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private AreaService areaService;
 
     @GetMapping(value="/listArea")
     public JsonResult listArea(){
+        logger.info("查询所有区域");
         PageHelper.startPage(1,2);
         List<Area> areaList = areaService.getAreaList();
         PageInfo pageInfo = new PageInfo(areaList);
